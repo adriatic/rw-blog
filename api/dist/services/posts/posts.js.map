@@ -1,0 +1,7 @@
+{
+  "version": 3,
+  "sources": ["../../../src/services/posts/posts.js"],
+  "sourcesContent": ["import { db } from 'src/lib/db'\n\nexport const posts = () => {\n  return db.post.findMany()\n}\n\nexport const post = ({ id }) => {\n  return db.post.findUnique({\n    where: { id },\n  })\n}\n\nexport const createPost = ({ input }) => {\n  return db.post.create({\n    data: input,\n  })\n}\n\nexport const updatePost = ({ id, input }) => {\n  return db.post.update({\n    data: input,\n    where: { id },\n  })\n}\n\nexport const deletePost = ({ id }) => {\n  return db.post.delete({\n    where: { id },\n  })\n}\n"],
+  "mappings": ";;;;;;;;;;;;;;;;;;;;;;AAAA;;;;;;;;gBAAA;AAEO,MAAM,QAAQ,MAAM;AACzB,SAAO,aAAG,KAAK;;AAGV,MAAM,OAAO,CAAC;EAAE;MAAS;AAC9B,SAAO,aAAG,KAAK,WAAW;IACxB,OAAO;MAAE;;;;AAIN,MAAM,aAAa,CAAC;EAAE;MAAY;AACvC,SAAO,aAAG,KAAK,OAAO;IACpB,MAAM;;;AAIH,MAAM,aAAa,CAAC;EAAE;EAAI;MAAY;AAC3C,SAAO,aAAG,KAAK,OAAO;IACpB,MAAM;IACN,OAAO;MAAE;;;;AAIN,MAAM,aAAa,CAAC;EAAE;MAAS;AACpC,SAAO,aAAG,KAAK,OAAO;IACpB,OAAO;MAAE;;;;",
+  "names": []
+}
